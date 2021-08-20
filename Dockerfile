@@ -17,7 +17,7 @@ RUN chown ${uid}:${gid} -R /home/docker
 USER docker
 WORKDIR /home/docker
 RUN /bin/bash -c 'sudo apt-get update && sudo apt-get install -y libarmadillo-dev ros-melodic-nlopt libdw-dev git && \
-	cd ~/ && mkdir ws && cd ws && mkdir src && cd src && https://github.com/t-thanh/panther && \
+	cd ~/ && mkdir ws && cd ws && mkdir src && cd src && git clone https://github.com/t-thanh/panther && \
 	sudo apt-get install libgmp3-dev libmpfr-dev -y && mkdir -p ~/installations/cgal && \
 	cd ~/installations/cgal && \ 
 	wget https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.14.2/CGAL-4.14.2.tar.xz && \
